@@ -1,27 +1,41 @@
-# AlarmasPago
+# Alarmas de Pago — Web
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.21.
+Aplicación web para el sistema de alarmas de pago de servicios y facturas, desarrollada en Angular. Proyecto del curso *Mejoramiento de la experiencia de usuario* (Universidad de los Andes).
 
-## Development server
+## Descripción
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Permite a los usuarios llevar control de sus obligaciones de pago (servicios, arriendo, seguros, etc.), visualizar cuáles están pendientes o pagadas, y consultar un resumen mensual filtrado por mes y categoría.
 
-## Code scaffolding
+## Pantallas incluidas
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- **Dashboard**: resumen de obligaciones pendientes y pagadas, accesos directos a Alarmas y Resumen mensual.
+- **Alarmas**: listado de obligaciones con filtro por pestañas (Todas / Pendientes / Pagadas).
+- **Resumen mensual**: filtros por mes y categoría, total pagado y detalle de pagos.
+- **Detalle de obligación**: información completa de una obligación individual.
 
-## Build
+## Tecnologías
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- Angular (standalone components)
+- SCSS con sistema de diseño propio (tokens de color, tipografía y componentes según *style tile* del proyecto)
 
-## Running unit tests
+## Cómo ejecutar el proyecto
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+\`\`\`bash
+npm install
+npm start
+\`\`\`
 
-## Running end-to-end tests
+La aplicación queda disponible en `http://localhost:4200`.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Estructura del proyecto
 
-## Further help
+\`\`\`
+src/app/
+├── core/              # Servicios (datos de obligaciones)
+├── shared/            # Componentes reutilizables (botón, badge, list-item, etc.)
+└── pages/             # Pantallas: dashboard, alarmas, resumen-mensual, detalle-obligacion
+\`\`\`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Autor
+
+Héctor Melgarejo — Curso UX, Universidad de los Andes
