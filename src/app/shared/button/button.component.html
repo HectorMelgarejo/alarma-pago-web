@@ -1,0 +1,10 @@
+<button
+  [type]="type"
+  class="btn"
+  [class.btn--filled]="variant === 'filled'"
+  [class.btn--outlined]="variant === 'outlined'"
+  [class.btn--full]="fullWidth"
+  [disabled]="disabled"
+>
+  <ng-content />
+</button>

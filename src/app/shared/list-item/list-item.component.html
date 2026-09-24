@@ -1,0 +1,22 @@
+<ng-container *ngIf="routerLink; else plain">
+  <a class="item" [routerLink]="routerLink">
+    <ng-container *ngTemplateOutlet="content" />
+  </a>
+</ng-container>
+<ng-template #plain>
+  <div class="item">
+    <ng-container *ngTemplateOutlet="content" />
+  </div>
+</ng-template>
+
+<ng-template #content>
+  <span class="item__dot" [class.item__dot--pendiente]="obligacion.estado === 'pendiente'"></span>
+  <div class="item__info">
+    <p class="item__nombre">{{ obligacion.nombre }}</p>
+    <p class="item__fecha">{{ fechaLabel }}</p>
+  </div>
+  <div class="item__end">
+    <span class="item__monto">{{ obligacion.monto | copCurrency }}</span>
+    <app-badge *ngIf="showBadge" [estado]="obligacion.estado" />
+  </div>
+</ng-template>

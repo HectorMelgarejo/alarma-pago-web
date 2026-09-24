@@ -1,0 +1,39 @@
+<app-top-app-bar titulo="Alarmas" />
+
+<main class="page">
+  <div class="tabs">
+    <button
+      class="tabs__item"
+      [class.tabs__item--activo]="tabActivo === 'todas'"
+      (click)="seleccionar('todas')"
+    >
+      Todas
+    </button>
+    <button
+      class="tabs__item"
+      [class.tabs__item--activo]="tabActivo === 'pendientes'"
+      (click)="seleccionar('pendientes')"
+    >
+      Pendientes
+    </button>
+    <button
+      class="tabs__item"
+      [class.tabs__item--activo]="tabActivo === 'pagadas'"
+      (click)="seleccionar('pagadas')"
+    >
+      Pagadas
+    </button>
+  </div>
+
+  <h2 class="section-title">{{ tituloSeccion }}</h2>
+
+  <div class="list-card">
+    <app-list-item
+      *ngFor="let o of lista"
+      [obligacion]="o"
+      [fechaLabel]="fechaLabel(o)"
+      [showBadge]="true"
+      [routerLink]="['/obligacion', o.id]"
+    />
+  </div>
+</main>

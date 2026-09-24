@@ -1,0 +1,16 @@
+<div class="overlay" (click)="cerrar.emit()">
+  <div class="sheet" (click)="$event.stopPropagation()">
+    <p class="sheet__title">{{ titulo }}</p>
+    <hr class="sheet__divider" />
+    <ul class="sheet__list">
+      <li
+        *ngFor="let opcion of opciones"
+        class="sheet__option"
+        [class.sheet__option--activo]="opcion === seleccionado"
+        (click)="elegir(opcion)"
+      >
+        {{ opcion }}
+      </li>
+    </ul>
+  </div>
+</div>

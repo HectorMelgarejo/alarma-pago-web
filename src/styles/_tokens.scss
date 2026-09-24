@@ -1,0 +1,84 @@
+// Design tokens — Style Tile: Sistema de alarmas de pago
+
+:root {
+  // Paleta principal
+  --color-navy: #16324f;
+  --color-teal: #3e9e86;
+  --color-azul: #2e6da4;
+  --color-ambar: #d98e30;
+  --color-rojo: #b85450;
+
+  // Variantes (hover/pressed/soft) derivadas de la paleta
+  --color-navy-dark: #0f2438;
+  --color-teal-dark: #2f7d69;
+  --color-teal-soft: #e6f3ef;
+  --color-ambar-soft: #fbf0e0;
+  --color-ambar-border: #d98e30;
+  --color-teal-border: #3e9e86;
+  --color-rojo-soft: #f7e9e8;
+
+  // Escala de grises (Color key)
+  --color-white: #ffffff;
+  --color-gray-50: #f4f4f4;
+  --color-gray-100: #e9e9ea;
+  --color-gray-300: #c7c9cb;
+  --color-gray-500: #9a9da1;
+  --color-gray-700: #4d4f52;
+  --color-gray-900: #1c1c1e;
+  --color-black: #000000;
+
+  // Fondo general de pantalla (bloque claro, no el navy de ambientación)
+  --color-bg: #ececec;
+  --color-surface: var(--color-white);
+  --color-border: #e2e2e2;
+
+  // Tipografía
+  --font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --font-headline-size: 24px;
+  --font-headline-line: 32px;
+  --font-headline-weight: 700;
+
+  --font-title-lg-size: 18px;
+  --font-title-lg-line: 24px;
+  --font-title-lg-weight: 700;
+
+  --font-title-md-size: 14px;
+  --font-title-md-line: 20px;
+  --font-title-md-weight: 600;
+
+  --font-body-lg-size: 16px;
+  --font-body-lg-line: 24px;
+  --font-body-lg-weight: 400;
+
+  --font-body-md-size: 14px;
+  --font-body-md-line: 20px;
+  --font-body-md-weight: 400;
+
+  --font-label-lg-size: 14px;
+  --font-label-lg-line: 20px;
+  --font-label-lg-weight: 600;
+
+  --font-label-sm-size: 11px;
+  --font-label-sm-line: 16px;
+  --font-label-sm-weight: 700;
+  --font-label-sm-spacing: 0.06em;
+
+  // Radios y sombras
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  --shadow-card: 0 1px 2px rgba(22, 50, 79, 0.06), 0 1px 3px rgba(22, 50, 79, 0.08);
+  --shadow-raised: 0 4px 10px rgba(22, 50, 79, 0.12);
+
+  // Espaciado
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+}

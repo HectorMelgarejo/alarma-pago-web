@@ -1,0 +1,69 @@
+<app-top-app-bar titulo="Resumen mensual" />
+
+<main class="page">
+  <div class="grid-2">
+    <button class="filter-field" type="button" (click)="mostrarSelectorMes = true">
+      <span class="filter-field__label">MES</span>
+      <span class="filter-field__row">
+        <span class="filter-field__value">{{ mesSeleccionado }}</span>
+        <span class="filter-field__chevron">⌄</span>
+      </span>
+    </button>
+    <button class="filter-field" type="button" (click)="mostrarSelectorCategoria = true">
+      <span class="filter-field__label">CATEGORÍAS</span>
+      <span class="filter-field__row">
+        <span class="filter-field__value">{{ categoriaSeleccionada }}</span>
+        <span class="filter-field__chevron">⌄</span>
+      </span>
+    </button>
+  </div>
+
+  <div class="filter-action">
+    <app-button variant="filled" [fullWidth]="false" (click)="aplicarFiltros()">Aplicar filtros</app-button>
+  </div>
+
+  <div class="banner" *ngIf="hayFiltrosSinAplicar">
+    Filtros seleccionados. Pulsa "Aplicar filtros" para actualizar los resultados.
+  </div>
+
+  <div class="total-card">
+    <p class="total-card__label">TOTAL PAGADO</p>
+    <p class="total-card__value">{{ total | copCurrency }}</p>
+  </div>
+
+  <ng-container *ngIf="resultados.length > 0; else vacio">
+    <h2 class="section-title">
+      {{ resultados.length }} pagos · {{ mesAplicado }} / {{ categoriaAplicada }}
+    </h2>
+    <div class="list-card">
+      <app-list-item *ngFor="let o of resultados" [obligacion]="o" [fechaLabel]="fechaLabel(o)" />
+    </div>
+  </ng-container>
+
+  <ng-template #vacio>
+    <div class="empty-card">
+      <div class="empty-card__icon">✓</div>
+      <p class="empty-card__title">Sin pagos para el filtro</p>
+      <p class="empty-card__subtitle">Cambia el mes o la categoría para explorar otros pagos.</p>
+      <app-button variant="filled" [fullWidth]="false">Cambiar filtro</app-button>
+    </div>
+  </ng-template>
+</main>
+
+<app-select-dialog
+  *ngIf="mostrarSelectorMes"
+  titulo="Seleccionar mes"
+  [opciones]="meses"
+  [seleccionado]="mesSeleccionado"
+  (cerrar)="mostrarSelectorMes = false"
+  (seleccionar)="elegirMes($event)"
+/>
+
+<app-select-dialog
+  *ngIf="mostrarSelectorCategoria"
+  titulo="Seleccionar categoría"
+  [opciones]="categorias"
+  [seleccionado]="categoriaSeleccionada"
+  (cerrar)="mostrarSelectorCategoria = false"
+  (seleccionar)="elegirCategoria($event)"
+/>

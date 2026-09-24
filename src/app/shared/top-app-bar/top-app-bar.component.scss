@@ -1,0 +1,39 @@
+@use '../../../styles/mixins';
+
+.app-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-5);
+  background: var(--color-navy);
+  color: var(--color-white);
+}
+
+.app-bar__back {
+  background: none;
+  border: none;
+  color: var(--color-white);
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 0;
+  margin-right: var(--space-1);
+}
+
+.app-bar__title {
+  @include mixins.title-large;
+  color: var(--color-white);
+  flex: 1;
+}
+
+.app-bar__avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--color-teal);
+}
+
+.app-bar__user {
+  @include mixins.body-medium;
+  color: var(--color-white);
+}

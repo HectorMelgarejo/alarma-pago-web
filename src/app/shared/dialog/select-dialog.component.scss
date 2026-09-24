@@ -1,0 +1,60 @@
+@use '../../../styles/mixins';
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(22, 50, 79, 0.35);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 100;
+
+  @media (min-width: 640px) {
+    align-items: center;
+  }
+}
+
+.sheet {
+  background: var(--color-surface);
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  padding: var(--space-5);
+  width: 100%;
+  max-width: 420px;
+  box-shadow: var(--shadow-raised);
+
+  @media (min-width: 640px) {
+    border-radius: var(--radius-lg);
+  }
+}
+
+.sheet__title {
+  @include mixins.title-large;
+}
+
+.sheet__divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: var(--space-3) 0 var(--space-2);
+}
+
+.sheet__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sheet__option {
+  @include mixins.body-large;
+  padding: var(--space-3) var(--space-2);
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+
+  &:hover {
+    background: var(--color-gray-50);
+  }
+
+  &--activo {
+    color: var(--color-teal);
+    font-weight: 700;
+  }
+}

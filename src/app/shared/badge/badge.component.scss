@@ -1,0 +1,23 @@
+@use '../../../styles/mixins';
+
+.badge {
+  @include mixins.label-large;
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 14px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid transparent;
+  white-space: nowrap;
+}
+
+.badge--pendiente {
+  color: var(--color-ambar);
+  border-color: var(--color-ambar);
+  background: var(--color-ambar-soft);
+}
+
+.badge--pagada {
+  color: var(--color-teal);
+  border-color: var(--color-teal);
+  background: var(--color-teal-soft);
+}

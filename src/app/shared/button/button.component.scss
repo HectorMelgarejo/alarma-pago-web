@@ -1,0 +1,61 @@
+@use '../../../styles/mixins';
+
+.btn {
+  @include mixins.label-large;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border-radius: var(--radius-pill);
+  padding: 14px 24px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background-color 0.15s ease, transform 0.05s ease, opacity 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+
+  &--full {
+    width: 100%;
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.btn--filled {
+  background: var(--color-teal);
+  color: var(--color-white);
+
+  &:hover:not(:disabled) {
+    background: var(--color-teal-dark);
+  }
+
+  &:active:not(:disabled) {
+    background: var(--color-teal-dark);
+  }
+
+  &:disabled {
+    background: var(--color-gray-300);
+    color: var(--color-gray-500);
+  }
+}
+
+.btn--outlined {
+  background: var(--color-white);
+  color: var(--color-navy);
+  border-color: var(--color-navy);
+
+  &:hover:not(:disabled) {
+    background: var(--color-gray-50);
+  }
+
+  &:disabled {
+    color: var(--color-gray-500);
+    border-color: var(--color-gray-300);
+  }
+}

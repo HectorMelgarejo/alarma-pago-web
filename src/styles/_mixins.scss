@@ -1,0 +1,63 @@
+@mixin headline {
+  font-size: var(--font-headline-size);
+  line-height: var(--font-headline-line);
+  font-weight: var(--font-headline-weight);
+  color: var(--color-white);
+  margin: 0;
+}
+
+@mixin title-large {
+  font-size: var(--font-title-lg-size);
+  line-height: var(--font-title-lg-line);
+  font-weight: var(--font-title-lg-weight);
+  color: var(--color-navy);
+  margin: 0;
+}
+
+@mixin title-medium {
+  font-size: var(--font-title-md-size);
+  line-height: var(--font-title-md-line);
+  font-weight: var(--font-title-md-weight);
+  color: var(--color-navy);
+  margin: 0;
+}
+
+@mixin body-large {
+  font-size: var(--font-body-lg-size);
+  line-height: var(--font-body-lg-line);
+  font-weight: var(--font-body-lg-weight);
+  color: var(--color-navy);
+  margin: 0;
+}
+
+@mixin body-medium {
+  font-size: var(--font-body-md-size);
+  line-height: var(--font-body-md-line);
+  font-weight: var(--font-body-md-weight);
+  color: var(--color-gray-700);
+  margin: 0;
+}
+
+@mixin label-large {
+  font-size: var(--font-label-lg-size);
+  line-height: var(--font-label-lg-line);
+  font-weight: var(--font-label-lg-weight);
+  margin: 0;
+}
+
+@mixin label-small {
+  font-size: var(--font-label-sm-size);
+  line-height: var(--font-label-sm-line);
+  font-weight: var(--font-label-sm-weight);
+  letter-spacing: var(--font-label-sm-spacing);
+  text-transform: uppercase;
+  color: var(--color-gray-700);
+  margin: 0;
+}
+
+@mixin card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--color-border);
+}

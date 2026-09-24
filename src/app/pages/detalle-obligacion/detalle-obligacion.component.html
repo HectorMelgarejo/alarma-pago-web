@@ -1,0 +1,33 @@
+<app-top-app-bar titulo="Detalle de obligación" />
+
+<main class="page" *ngIf="obligacion as o">
+  <div class="detail-card">
+    <p class="detail-card__section">INFORMACIÓN DEL PAGO</p>
+    <hr class="detail-card__divider" />
+
+    <div class="field">
+      <p class="field__label">Nombre</p>
+      <p class="field__value">{{ o.nombre }}</p>
+    </div>
+    <hr class="field__divider" />
+
+    <div class="field">
+      <p class="field__label">Monto</p>
+      <p class="field__value">{{ o.monto | copCurrency }}</p>
+    </div>
+    <hr class="field__divider" />
+
+    <div class="field">
+      <p class="field__label">Vence</p>
+      <p class="field__value">{{ o.fechaCompleta }}</p>
+    </div>
+    <hr class="field__divider" />
+
+    <div class="field">
+      <p class="field__label">Estado</p>
+      <app-badge [estado]="o.estado" />
+    </div>
+
+    <div class="note">La edición se realiza desde la aplicación móvil.</div>
+  </div>
+</main>

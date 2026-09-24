@@ -1,0 +1,29 @@
+<app-top-app-bar titulo="Dashboard" [showBack]="false" />
+
+<main class="page">
+  <div class="grid-2">
+    <div class="stat-card">
+      <p class="stat-card__label">PENDIENTES</p>
+      <p class="stat-card__value">{{ pendientes.length }}</p>
+    </div>
+    <div class="stat-card">
+      <p class="stat-card__label">PAGADAS ESTE MES</p>
+      <p class="stat-card__value">{{ pagadas.length }}</p>
+    </div>
+  </div>
+
+  <div class="grid-2">
+    <app-button variant="filled" routerLink="/alarmas">Ver alarmas</app-button>
+    <app-button variant="outlined" routerLink="/resumen-mensual">Resumen mensual</app-button>
+  </div>
+
+  <h2 class="section-title">Próximas obligaciones</h2>
+  <div class="list-card">
+    <app-list-item
+      *ngFor="let o of proximas"
+      [obligacion]="o"
+      [fechaLabel]="'Vence ' + o.fecha"
+      [routerLink]="['/obligacion', o.id]"
+    />
+  </div>
+</main>
